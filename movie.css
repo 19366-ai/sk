@@ -1,0 +1,1013 @@
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.breadcrumb {
+  background: var(--sky-light);
+  border-bottom: 1px solid #DCEEF9;
+}
+
+.breadcrumb-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.breadcrumb-wrap a {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.breadcrumb-wrap a:hover {
+  color: var(--sky);
+}
+
+.breadcrumb-wrap span {
+  margin: 0 4px;
+}
+
+#crumbTitle {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   DETAIL LAYOUT
+===================================================== */
+
+.detail-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.detail-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid #EAF3FA;
+  padding: 36px;
+
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+}
+
+
+/* =====================================================
+   POSTER
+===================================================== */
+
+.detail-poster {
+  aspect-ratio: 2 / 3;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      150deg,
+      var(--sky-light) 0%,
+      #d7ecfa 100%
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 72px;
+  color: var(--sky);
+
+  box-shadow:
+    0 12px 28px rgba(11, 46, 78, 0.15);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.detail-poster img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 16px;
+
+  position: absolute;
+  inset: 0;
+}
+
+.detail-poster .poster-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.detail-poster .status-badge {
+  position: absolute;
+
+  top: 14px;
+  left: 14px;
+
+  background: var(--navy-deep);
+  color: #fff;
+
+  font-size: 11.5px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  padding: 5px 12px;
+
+  border-radius: 999px;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   MOVIE INFORMATION
+===================================================== */
+
+.detail-info h1 {
+  font-size: 32px;
+  font-weight: 800;
+
+  color: var(--navy-deep);
+
+  margin-bottom: 14px;
+
+  line-height: 1.25;
+}
+
+.detail-genre {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 24px;
+}
+
+.detail-genre span {
+  background: var(--sky-light);
+  color: var(--sky);
+
+  font-size: 12.5px;
+  font-weight: 700;
+
+  padding: 5px 14px;
+
+  border-radius: 999px;
+}
+
+
+/* =====================================================
+   META
+===================================================== */
+
+.meta-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.meta-item {
+  background: var(--sky-light);
+
+  border-radius: 12px;
+
+  padding: 14px 16px;
+}
+
+.meta-item .label {
+  font-size: 12px;
+
+  color: var(--muted);
+
+  font-weight: 600;
+
+  margin-bottom: 4px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.meta-item .value {
+  font-size: 14.5px;
+
+  font-weight: 700;
+
+  color: var(--navy-deep);
+}
+
+
+/* =====================================================
+   DETAIL SECTION
+===================================================== */
+
+.detail-section {
+  margin-bottom: 26px;
+}
+
+.detail-section h2 {
+  font-size: 16px;
+
+  font-weight: 800;
+
+  color: var(--navy-deep);
+
+  margin-bottom: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.detail-section h2::before {
+  content: '';
+
+  width: 4px;
+  height: 16px;
+
+  background: var(--sky);
+
+  border-radius: 3px;
+}
+
+.detail-section p {
+  color: var(--muted);
+
+  line-height: 1.85;
+
+  font-size: 14.5px;
+}
+
+
+/* =====================================================
+   CAST
+===================================================== */
+
+.cast-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.cast-list span {
+  background: #fff;
+
+  border: 1.5px solid var(--sky-light);
+
+  color: var(--ink);
+
+  font-size: 13.5px;
+
+  font-weight: 600;
+
+  padding: 7px 14px;
+
+  border-radius: 10px;
+}
+
+
+/* =====================================================
+   TRAILER
+===================================================== */
+
+.trailer-box {
+  margin-top: 35px;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  aspect-ratio: 16 / 9;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-deep),
+      var(--navy) 60%,
+      var(--sky)
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: transform 0.25s;
+}
+
+.trailer-box:hover {
+  transform: scale(1.01);
+}
+
+.trailer-box.playing {
+  cursor: default;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   TRAILER CONTENT
+===================================================== */
+
+.trailer-content {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: white;
+
+  gap: 10px;
+}
+
+.trailer-icon {
+  width: 74px;
+  height: 74px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+
+  color: var(--navy-deep);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35);
+
+  transition: transform 0.2s;
+}
+
+.trailer-box:hover .trailer-icon {
+  transform: scale(1.1);
+}
+
+.trailer-content h2 {
+  font-size: 22px;
+
+  margin: 5px 0 0;
+}
+
+.trailer-content p {
+  margin: 0;
+
+  font-size: 13px;
+
+  opacity: 0.8;
+}
+
+
+/* =====================================================
+   REAL VIDEO / YOUTUBE
+===================================================== */
+
+.real-player {
+  width: 100%;
+  height: 100%;
+
+  background: #000;
+}
+
+.real-player iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: none;
+}
+
+
+/* =====================================================
+   FAKE PLAYER
+===================================================== */
+
+.trailer-box video,
+.trailer-box .fake-player {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.fake-player {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #fff;
+
+  gap: 10px;
+
+  text-align: center;
+}
+
+.fake-player .pulse {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+
+  border: 3px solid rgba(255, 255, 255, 0.5);
+
+  border-top-color: #fff;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.movie-actions,
+.detail-actions {
+  display: flex;
+
+  gap: 14px;
+
+  margin-top: 32px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   BOOK BUTTON
+===================================================== */
+
+.book-btn,
+.btn-book {
+  background: var(--sky);
+
+  color: #fff;
+
+  border: none;
+
+  padding: 15px 32px;
+
+  border-radius: 12px;
+
+  font-weight: 800;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    transform 0.2s;
+
+  box-shadow:
+    0 10px 24px rgba(58, 168, 224, 0.35);
+}
+
+.book-btn:hover,
+.btn-book:hover {
+  background: var(--navy);
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   BOOKING QR BUTTON
+===================================================== */
+
+.btn-qr {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: #fff;
+
+  color: var(--navy-deep);
+
+  border: 2px solid var(--sky-light);
+
+  padding: 14px 26px;
+
+  border-radius: 12px;
+
+  font-weight: 800;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.btn-qr:hover {
+  border-color: var(--sky);
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   VIDEO QR BUTTON
+===================================================== */
+
+.video-qr-btn {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  background: #fff;
+
+  color: var(--navy-deep);
+
+  border: 2px solid var(--sky-light);
+
+  padding: 14px 24px;
+
+  border-radius: 12px;
+
+  font-weight: 800;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    transform 0.2s;
+}
+
+.video-qr-btn:hover {
+  border-color: var(--sky);
+
+  background: var(--sky-light);
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   QR MODAL
+===================================================== */
+
+.qr-modal {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(8, 33, 58, 0.55);
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 200;
+
+  padding: 20px;
+}
+
+.qr-modal.open {
+  display: flex;
+}
+
+
+/* =====================================================
+   QR BOX
+===================================================== */
+
+.qr-box {
+  background: #fff;
+
+  border-radius: 20px;
+
+  padding: 32px;
+
+  text-align: center;
+
+  max-width: 340px;
+
+  width: 100%;
+
+  position: relative;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.35);
+
+  animation: qrShow 0.25s ease;
+}
+
+@keyframes qrShow {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* =====================================================
+   QR TITLE
+===================================================== */
+
+.qr-box h3 {
+  color: var(--navy-deep);
+
+  font-size: 18px;
+
+  margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   QR CLOSE
+===================================================== */
+
+.qr-close {
+  position: absolute;
+
+  top: 14px;
+
+  right: 14px;
+
+  background: var(--sky-light);
+
+  border: none;
+
+  width: 32px;
+
+  height: 32px;
+
+  border-radius: 50%;
+
+  font-size: 18px;
+
+  color: var(--navy-deep);
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.qr-close:hover {
+  background: #d4edf9;
+
+  transform: rotate(90deg);
+}
+
+
+/* =====================================================
+   QR IMAGE WRAPPER
+===================================================== */
+
+.qr-img-wrap {
+  background: var(--sky-light);
+
+  border-radius: 14px;
+
+  padding: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 16px;
+}
+
+.qr-img-wrap img {
+  width: 180px;
+
+  height: 180px;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   QR MOVIE TITLE
+===================================================== */
+
+#qrMovieTitle {
+  font-weight: 700;
+
+  color: var(--navy-deep);
+
+  margin-bottom: 6px;
+}
+
+
+/* =====================================================
+   VIDEO QR MODAL
+===================================================== */
+
+#videoQrModal .qr-box {
+  max-width: 390px;
+}
+
+
+/* =====================================================
+   VIDEO QR IMAGE
+===================================================== */
+
+#videoQrImg {
+  width: 250px;
+
+  height: 250px;
+
+  object-fit: contain;
+
+  background: #fff;
+
+  border-radius: 10px;
+}
+
+
+/* =====================================================
+   VIDEO QR TITLE
+===================================================== */
+
+#videoQrTitle {
+  font-weight: 800;
+
+  font-size: 18px;
+
+  color: var(--navy-deep);
+
+  margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   QR HINT
+===================================================== */
+
+.qr-hint {
+  font-size: 12.5px;
+
+  color: var(--muted);
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   QR SQUARE
+===================================================== */
+
+.qr-square {
+  width: 220px;
+
+  height: 220px;
+
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--sky-light);
+
+  border-radius: 16px;
+
+  padding: 16px;
+
+  box-sizing: border-box;
+}
+
+.qr-square-img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   NOT FOUND
+===================================================== */
+
+.not-found {
+  text-align: center;
+
+  padding: 80px 24px;
+
+  color: var(--muted);
+}
+
+.not-found h1 {
+  font-size: 24px;
+
+  color: var(--navy-deep);
+
+  margin-bottom: 12px;
+}
+
+.not-found a {
+  color: var(--sky);
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 760px) {
+
+  .detail-wrap {
+    padding:
+      30px 16px 50px;
+  }
+
+
+  .detail-card {
+    grid-template-columns: 1fr;
+
+    padding: 24px;
+
+    gap: 28px;
+  }
+
+
+  .detail-poster {
+    max-width: 220px;
+
+    width: 100%;
+
+    margin: 0 auto;
+  }
+
+
+  .detail-info h1 {
+    font-size: 26px;
+  }
+
+
+  .meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .movie-actions,
+  .detail-actions {
+    flex-direction: column;
+  }
+
+
+  .book-btn,
+  .btn-book,
+  .btn-qr,
+  .video-qr-btn {
+    width: 100%;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+  }
+
+
+  .trailer-box {
+    border-radius: 12px;
+  }
+
+
+  .trailer-icon {
+    width: 62px;
+    height: 62px;
+
+    font-size: 22px;
+  }
+
+
+  .trailer-content h2 {
+    font-size: 18px;
+  }
+
+
+  .qr-box {
+    padding: 26px 20px;
+  }
+
+
+  #videoQrImg {
+    width: 220px;
+
+    height: 220px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .detail-card {
+    padding: 18px;
+  }
+
+
+  .detail-info h1 {
+    font-size: 23px;
+  }
+
+
+  .detail-genre span {
+    font-size: 11px;
+
+    padding: 5px 11px;
+  }
+
+
+  .meta-item {
+    padding: 12px;
+  }
+
+
+  .qr-box {
+    max-width: 300px;
+  }
+
+
+  #videoQrImg {
+    width: 190px;
+
+    height: 190px;
+  }
+
+}

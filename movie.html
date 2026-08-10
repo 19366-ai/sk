@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>รายละเอียดหนัง | Simuang Wittayakhan Film</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="movie.css">
+
+<!-- QR Code Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+
+<body><div class="qr-modal" id="videoQrModal">
+
+    <div class="qr-box">
+
+        <button
+            class="qr-close"
+            id="videoQrClose"
+            type="button"
+        >
+            ×
+        </button>
+
+        <h3>
+            QR ตัวอย่างภาพยนตร์
+        </h3>
+
+        <div class="qr-img-wrap">
+
+            <img
+                id="videoQrImg"
+                src=""
+                alt="QR Code ตัวอย่างภาพยนตร์"
+            >
+
+        </div>
+
+        <div id="videoQrTitle"></div>
+
+        <p class="qr-hint">
+            สแกน QR Code ด้วยโทรศัพท์
+            เพื่อเปิดตัวอย่างภาพยนตร์
+        </p>
+
+    </div>
+
+</div>
+
+<header>
+  <div class="nav-wrap">
+
+    <a href="index.html" class="logo">
+      Srimuang Wittayakhan <span class="accent">Film</span>
+    </a>
+
+    <nav>
+      <ul id="navMenu">
+        <li><a href="index.html">หน้าหลัก</a></li>
+        <li><a href="index.html#all">หนังทั้งหมด</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-wrap">
+    <a href="index.html">หน้าหลัก</a>
+    <span>/</span>
+    <span id="crumbTitle">รายละเอียดหนัง</span>
+  </div>
+</div>
+
+<main class="detail-wrap" id="detailWrap">
+  <!-- เนื้อหาจะถูกสร้างด้วย JavaScript -->
+</main>
+
+<footer>
+  <strong>Simuang Wittayakhan Film</strong>
+  — โรงภาพยนตร์แห่งอนาคต
+  <br>
+  © 2026 Simuang Wittayakhan Film. All rights reserved.
+</footer>
+
+<script src="movie_data.js"></script>
+<script src="script_common.js"></script>
+<script src="movie.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>จัดการหนัง | AOU CINEMA Admin</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      Simuang Wittayakhan <span class="accent">Flim</span>
+    </a>
+    <div class="admin-title-badge">แผงควบคุมผู้ดูแลระบบ</div>
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <div class="admin-topbar">
+    <div>
+      <h1>จัดการหนัง</h1>
+      <p>เพิ่ม แก้ไข ลบหนัง พร้อมจัดการ Poster, Background, Trailer และ QR Code</p>
+    </div>
+    <div class="admin-topbar-actions">
+      <button class="btn-outline" id="exportBtn">⬇ ส่งออกข้อมูล (movies-data.js)</button>
+      <button class="btn-primary-solid" id="addNewBtn">+ เพิ่มหนังใหม่</button>
+    </div>
+  </div>
+
+  <div class="admin-search">
+    <input type="text" id="searchInput" placeholder="ค้นหาหนังจากชื่อหรือ Movie ID...">
+  </div>
+
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Poster</th>
+          <th>ชื่อหนัง / Movie ID</th>
+          <th>Genre</th>
+          <th>สถานะ</th>
+          <th>QR Code</th>
+          <th style="text-align:right;">จัดการ</th>
+        </tr>
+      </thead>
+      <tbody id="movieTableBody"></tbody>
+    </table>
+    <div class="empty-state" id="emptyState" style="display:none;">
+      ไม่พบหนังที่ตรงกับคำค้นหา
+    </div>
+  </div>
+
+</main>
+
+<!-- ===== FORM PANEL (Slide-over) ===== -->
+<div class="overlay" id="overlay"></div>
+<aside class="form-panel" id="formPanel">
+  <div class="form-panel-head">
+    <h2 id="formTitle">เพิ่มหนังใหม่</h2>
+    <button class="panel-close" id="panelClose">✕</button>
+  </div>
+
+  <form id="movieForm" class="form-body">
+
+    <div class="form-row two">
+      <div class="field">
+        <label>Movie ID <span class="req">*</span></label>
+        <input type="text" id="f_id" placeholder="เช่น sky-origins" required>
+        <small>ใช้เป็นรหัสอ้างอิงและเชื่อมกับ QR Code (แก้ไขไม่ได้หลังบันทึกครั้งแรก)</small>
+      </div>
+      <div class="field">
+        <label>สถานะ</label>
+        <select id="f_status">
+          <option value="showing">กำลังฉาย</option>
+          <option value="soon">กำลังจะเข้าฉาย</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>ชื่อหนัง <span class="req">*</span></label>
+      <input type="text" id="f_title" placeholder="เช่น Sky Origins" required>
+    </div>
+
+    <div class="form-row two">
+      <div class="field">
+        <label>Genre (คั่นด้วย , )</label>
+        <input type="text" id="f_genre" placeholder="Action, Sci-Fi">
+      </div>
+      <div class="field">
+        <label>ระยะเวลา</label>
+        <input type="text" id="f_duration" placeholder="2 ชม. 18 นาที">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>วันเข้าฉาย</label>
+      <input type="text" id="f_releaseDate" placeholder="1 สิงหาคม 2569">
+    </div>
+
+    <div class="field">
+      <label>นักแสดง (คั่นด้วย , )</label>
+      <input type="text" id="f_cast" placeholder="ชื่อนักแสดง 1, ชื่อนักแสดง 2">
+    </div>
+
+    <div class="field">
+      <label>เรื่องย่อ</label>
+      <textarea id="f_synopsis" rows="4" placeholder="เรื่องย่อของหนัง..."></textarea>
+    </div>
+
+    <hr class="divider">
+
+    <div class="field">
+      <label>Poster</label>
+      <div class="upload-row">
+        <div class="upload-preview" id="posterPreview">🖼</div>
+        <div class="upload-controls">
+          <input type="file" id="f_poster" accept="image/*" hidden>
+          <button type="button" class="btn-outline small" id="posterBtn">อัปโหลด Poster</button>
+          <button type="button" class="btn-text small" id="posterClear">ล้างรูป (ใช้ไอคอน)</button>
+        </div>
+      </div>
+      <div class="field" style="margin-top:10px;">
+        <label class="sub-label">หรือใช้ Emoji แทน Poster</label>
+        <input type="text" id="f_icon" placeholder="🚀" maxlength="4">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Background (ภาพพื้นหลังหน้ารายละเอียด)</label>
+      <div class="upload-row">
+        <div class="upload-preview wide" id="bgPreview">🌌</div>
+        <div class="upload-controls">
+          <input type="file" id="f_bg" accept="image/*" hidden>
+          <button type="button" class="btn-outline small" id="bgBtn">อัปโหลด Background</button>
+          <button type="button" class="btn-text small" id="bgClear">ล้างรูป</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Trailer</label>
+      <div class="trailer-input-group">
+        <input type="text" id="f_trailerUrl" placeholder="วางลิงก์ตัวอย่างหนัง (YouTube, MP4 ฯลฯ)">
+        <span class="or-text">หรือ</span>
+        <input type="file" id="f_trailerFile" accept="video/*" hidden>
+        <button type="button" class="btn-outline small" id="trailerBtn">อัปโหลดไฟล์วิดีโอ</button>
+      </div>
+      <small id="trailerFileName"></small>
+    </div>
+
+    <hr class="divider">
+
+    <div class="field">
+      <label>QR Code <span class="hint-inline">(เชื่อมกับ Movie ID โดยอัตโนมัติ)</span></label>
+      <div class="qr-upload-box">
+        <div class="qr-preview" id="qrPreview">
+          <span>ยังไม่มี QR Code</span>
+        </div>
+        <div class="upload-controls">
+          <input type="file" id="f_qr" accept="image/*" hidden>
+          <button type="button" class="btn-outline small" id="qrUploadBtn">อัปโหลด QR Code</button>
+          <button type="button" class="btn-outline small" id="qrGenBtn">สร้างอัตโนมัติจาก Movie ID</button>
+          <button type="button" class="btn-text small" id="qrClearBtn">ล้าง QR Code</button>
+        </div>
+      </div>
+      <small>QR ที่สร้างอัตโนมัติจะเข้ารหัสรหัสหนัง (Movie ID) นี้เพื่อใช้จองตั๋ว</small>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn-outline" id="cancelBtn">ยกเลิก</button>
+      <button type="submit" class="btn-primary-solid">💾 บันทึกหนัง</button>
+    </div>
+  </form>
+</aside>
+
+<!-- ===== DELETE CONFIRM ===== -->
+<div class="overlay" id="deleteOverlay"></div>
+<div class="confirm-box" id="deleteBox">
+  <h3>ลบหนังเรื่องนี้?</h3>
+  <p id="deleteMovieName"></p>
+  <div class="confirm-actions">
+    <button class="btn-outline" id="deleteCancel">ยกเลิก</button>
+    <button class="btn-danger" id="deleteConfirm">ลบหนัง</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="movie_data.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
